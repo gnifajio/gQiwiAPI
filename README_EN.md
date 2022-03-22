@@ -1,0 +1,69 @@
+# gQiwiAPI by _Gnifajio_ ![]() ![]() ![](https://badgen.net/badge/release/v1.0/grey)
+
+_A simple API for creating a payment link_
+
+#### Installation
+
+[]()
+
+```sh
+git clone https://github.com/gnifajio/gQiwiAPI.git
+pip install -r requirements.txt
+```
+
+#### Usage
+
+[]()
+
+```python
+# Initialization
+from gQiwiAPI import Qiwi
+SECRET_KEY = 'Your secret key for managing payments'
+qiwi = Qiwi(SECRET_KEY)
+# Creating an bill
+my_first_bill = qiwi.create_bill(10, '15m')
+# Getting a payment link
+payUrl = my_first_bill.payUrl
+# Checking the payment status
+bill_state = qiwi.bill_status(my_first_bill)
+```
+
+> You can get `SECRET_KEY` on [official website](https://qiwi.com/p2p-admin/transfers/api).
+
+##### Syntax
+
+[]()
+
+```python
+qiwi.create_bill(amount, expDT='15m')
+```
+
+> `amount` - the amount of the payment in rubles.
+> `expDT` - the validity time of the link.
+
+About `amount` I will only say that you can pass `str`, `int` and `float` there and everything will work fine.
+`expDT` is set in the format `nd:nh:nm:ns`, where
+
+> `n` - int
+> `d` - days
+> `h` - hours
+> `m` - minutes
+> `s` - seconds
+
+You can pass both integer and fractional numbers to `n`, the order is also not important.
+For example:
+```python
+amount = 10
+qiwi.create_bill(amount, expDT='0.3d:77m:0.5h')
+```
+
+#### Links
+
+[QIWI: API of P2P accounts. Invoicing.](https://developer.qiwi.com/ru/p2p-payments/?shell#create)
+[QIWI: Authentication data.](https://qiwi.com/p2p-admin/transfers/api)
+
+#### TODO
+
+- Expand the API
+- - Add `customer` support
+- - Add `customFields` support

@@ -22,7 +22,7 @@ class Qiwi:
         self.SECRET_KEY = secret_key
     
     
-    def create_payment(self, amount, expDT='15m'):
+    def create_bill(self, amount, expDT='15m'):
         amount = self._format_amount(amount=amount)
         bill_id = str(uuid.uuid4())
         url = f'https://api.qiwi.com/partner/bill/v1/bills/{bill_id}'

@@ -65,5 +65,5 @@ qiwi.create_payment(amount, expDT='0.3d:77m:0.5h')
 #### TODO
 
 - Расширить API
-- - Добавить поддержку customer
-- - Добавить поддержку customFields
+- - Добавить поддержку customer.
+- - Добавить поддержку customFields.
