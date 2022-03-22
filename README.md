@@ -21,7 +21,7 @@ from gQiwiAPI import Qiwi
 SECRET_KEY = 'Ваш секретный ключ для управления платежами'
 qiwi = Qiwi(SECRET_KEY)
 # Создание счета
-my_first_bill = qiwi.create_payment(10, '15m')
+my_first_bill = qiwi.create_bill(10, '15m')
 # Получение ссылки
 payUrl = my_first_bill.payUrl
 # Проверка статуса платежа
@@ -35,7 +35,7 @@ bill_state = qiwi.bill_status(my_first_bill)
 []()
 
 ```python
-qiwi.create_payment(amount, expDT='15m')
+qiwi.create_bill(amount, expDT='15m')
 ```
 
 > `amount` - сумма платежа в рублях.
@@ -54,7 +54,7 @@ qiwi.create_payment(amount, expDT='15m')
 Например:
 ```python
 amount = 10
-qiwi.create_payment(amount, expDT='0.3d:77m:0.5h')
+qiwi.create_bill(amount, expDT='0.3d:77m:0.5h')
 ```
 
 #### Ссылки
