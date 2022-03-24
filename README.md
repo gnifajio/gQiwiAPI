@@ -47,7 +47,7 @@ qiwi.create_bill(self, amount, comment=None, expDT='15m')
 Коментарий по умолчаниу установлен в значение `None`, и не используется.
 Добавить комментарий к платежу можно так:
 ``` python
-qiwi.create_bill(self, 10, comment='=Тест', expDT='30m')
+qiwi.create_bill(self, 10, comment='Тест', expDT='30m')
 ```
 []()
 `expDT` задается в формате `nd:nh:nm:ns`, где
