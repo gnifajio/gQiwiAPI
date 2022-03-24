@@ -39,9 +39,17 @@ qiwi.create_bill(amount, expDT='15m')
 ```
 
 > `amount` - the amount of the payment in rubles.
+> `comment` - comment
 > `expDT` - the validity time of the link.
 
 About `amount` I will only say that you can pass `str`, `int` and `float` there and everything will work fine.
+[]()
+The default comment is set to `None`, and is not used.
+You can add a comment to the payment like this:
+``` python
+qiwi.create_bill(self, 10, comment='=Тест', expDT='30m')
+```
+[]()
 `expDT` is set in the format `nd:nh:nm:ns`, where
 
 > `n` - int
