@@ -1,1 +1,1 @@
-from gQiwiAPI import Qiwi, Bill
+from .API import Qiwi, Bill
