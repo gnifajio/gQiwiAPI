@@ -1,10 +1,10 @@
-# gQiwiAPI by _Gnifajio_ ![]() ![]() ![](https://badgen.net/badge/release/v1.0/grey)
+# gQiwiAPI by _Gnifajio_ ! ! ![](https://badgen.net/badge/release/v1.0/grey)
 
 _Простое API для создания ссылки на оплату_
 
 #### Установка
 
-[]()
+
 
 ```sh
 git clone https://github.com/gnifajio/gQiwiAPI.git
@@ -15,7 +15,7 @@ python3 setup.py install
 
 #### Использование
 
-[]()
+
 
 ```python
 # Инициализация
@@ -34,7 +34,7 @@ bill_state = qiwi.bill_status(my_first_bill)
 
 ##### Синтаксис
 
-[]()
+
 
 ```python
 qiwi.create_bill(self, amount, comment=None, expDT='15m')
@@ -45,13 +45,13 @@ qiwi.create_bill(self, amount, comment=None, expDT='15m')
 > `expDT` - время валидности ссылки.
 
 Про `amount` скажу только, что Вы можете передать туда `str`, `int` и `float` и все будет прекрасно работать.
-[]()
+
 Коментарий по умолчаниу установлен в значение `None`, и не используется.
 Добавить комментарий к платежу можно так:
 ``` python
 qiwi.create_bill(self, 10, comment='Тест', expDT='30m')
 ```
-[]()
+
 `expDT` задается в формате `nd:nh:nm:ns`, где
 
 > `n` - число

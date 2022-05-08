@@ -1,10 +1,10 @@
-# gQiwiAPI by _Gnifajio_ ![]() ![]() ![](https://badgen.net/badge/release/v1.0/grey)
+# gQiwiAPI by _Gnifajio_ ! ! ![](https://badgen.net/badge/release/v1.0/grey)
 
 _A simple API for creating a payment link_
 
 #### Installation
 
-[]()
+
 
 ```sh
 git clone https://github.com/gnifajio/gQiwiAPI.git
@@ -15,7 +15,7 @@ python3 setup.py install
 
 #### Usage
 
-[]()
+
 
 ```python
 # Initialization
@@ -34,7 +34,7 @@ bill_state = qiwi.bill_status(my_first_bill)
 
 ##### Syntax
 
-[]()
+
 
 ```python
 qiwi.create_bill(amount, expDT='15m')
@@ -45,13 +45,13 @@ qiwi.create_bill(amount, expDT='15m')
 > `expDT` - the validity time of the link.
 
 About `amount` I will only say that you can pass `str`, `int` and `float` there and everything will work fine.
-[]()
+
 The default comment is set to `None`, and is not used.
 You can add a comment to the payment like this:
 ``` python
 qiwi.create_bill(self, 10, comment='Test', expDT='30m')
 ```
-[]()
+
 `expDT` is set in the format `nd:nh:nm:ns`, where
 
 > `n` - int
