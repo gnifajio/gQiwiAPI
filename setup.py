@@ -5,5 +5,5 @@ setup(
     name='gQiwiAPI',
     version='1.0',
     packages=find_packages(),
-    long_description=open(join(dirname(__file__), 'README.md')).read(),
+    long_description=open(join(dirname(__file__), 'README_EN.md')).read(),
 )
