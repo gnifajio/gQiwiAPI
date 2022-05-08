@@ -1,6 +1,7 @@
-import requests
-import uuid
 from datetime import datetime, timedelta
+import requests
+import pytz
+import uuid
 
 class Bill:
     def __init__(self, resp):
@@ -85,5 +86,5 @@ class Qiwi:
                 dtargs['minutes'] += float(tm)
             elif code == 's':
                 dtargs['seconds'] += float(tm)
-        return datetime.isoformat(datetime.now() + timedelta(**dtargs)).split('.')[0] + '+03:00'
+        return datetime.isoformat(datetime.now(pytz.timezone('Europe/Moscow')) + timedelta(**dtargs)).split('.')[0] + '+03:00'
 
