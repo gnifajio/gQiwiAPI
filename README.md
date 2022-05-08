@@ -9,6 +9,8 @@ _Простое API для создания ссылки на оплату_
 ```sh
 git clone https://github.com/gnifajio/gQiwiAPI.git
 pip install -r requirements.txt
+cd gQiwiAPI
+python3 setup.py install
 ```
 
 #### Использование

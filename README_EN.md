@@ -9,6 +9,8 @@ _A simple API for creating a payment link_
 ```sh
 git clone https://github.com/gnifajio/gQiwiAPI.git
 pip install -r requirements.txt
+cd gQiwiAPI
+python3 setup.py install
 ```
 
 #### Usage
