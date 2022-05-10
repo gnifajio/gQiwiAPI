@@ -13,6 +13,12 @@ cd gQiwiAPI
 python3 setup.py install
 ```
 
+or
+
+```sh
+pip install gQiwiAPI
+```
+
 #### Usage
 
 
