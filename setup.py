@@ -7,10 +7,9 @@ with open('requirements.txt', 'r') as fr:
     requirements = map(lambda line: line.strip(), fr.readlines())
 
 
-
 setuptools.setup(
 	name = "gQiwiAPI",
-	version = "1.1",
+	version = "1.2",
 	author = "Gnifajio None",
 	author_email = "gnifajio@gmail.com",
 	description = "A simple API for creating a payment link",
@@ -24,5 +23,5 @@ setuptools.setup(
 		"License :: OSI Approved :: MIT License",
 		"Operating System :: OS Independent",
 	],
-	python_requires = '>=3.6',
+	python_requires = '>=3.7',
 )
