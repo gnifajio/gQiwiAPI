@@ -7,6 +7,7 @@ with open('requirements.txt', 'r') as fr:
     requirements = map(lambda line: line.strip(), fr.readlines())
 
 
+
 setuptools.setup(
 	name = "gQiwiAPI",
 	version = "1.1",
