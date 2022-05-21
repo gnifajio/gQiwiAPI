@@ -1,4 +1,4 @@
-# gQiwiAPI by _Gnifajio_   ![](https://badgen.net/badge/release/v1.0/grey) ![](https://komarev.com/ghpvc/?username=gnifajio.gQiwiAPI&label=views)
+# gQiwiAPI by _Gnifajio_   ![](https://badgen.net/badge/release/v1.0/grey) ![](https://komarev.com/ghpvc/?username=gnifajio-gQiwiAPI&label=views)
 
 _A simple API for creating a payment link_
 
