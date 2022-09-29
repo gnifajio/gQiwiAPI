@@ -46,10 +46,13 @@ class Qiwi:
         resp = requests.put(url=url, json=data, headers=headers)
         
         return Bill(resp)
-
-
+    
     def bill_status(self, bill: Bill):
-        url = f'https://api.qiwi.com/partner/bill/v1/bills/{bill.bill_id}'
+        return self.check_pay_id(bill.bill_id)
+
+
+    def check_pay_id(self, pay_id):
+        url = f'https://api.qiwi.com/partner/bill/v1/bills/{pay_id}'
         headers = {
             'accept': 'application/json',
             'authorization': f'Bearer {self.SECRET_KEY}'
