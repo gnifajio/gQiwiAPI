@@ -1,10 +1,10 @@
-# gQiwiAPI by _Gnifajio_   ![](https://badgen.net/badge/release/v1.0/grey) ![](https://komarev.com/ghpvc/?username=gnifajio-gQiwiAPI&label=views)
+# gQiwiAPI by _Gnifajio_
 
-_Простое API для создания ссылки на оплату_
+![](https://badgen.net/badge/release/v1.3/grey) ![](https://komarev.com/ghpvc/?username=gnifajio-gQiwiAPI&label=views)
 
-#### Установка
+_A simple API for creating a payment link_
 
-
+#### Installation
 
 ```sh
 git clone https://github.com/gnifajio/gQiwiAPI.git
@@ -13,72 +13,81 @@ cd gQiwiAPI
 python3 setup.py install
 ```
 
-Или
+or
 
 ```sh
 pip install gQiwiAPI
 ```
 
-#### Использование
-
-
+#### Usage
 
 ```python
-# Инициализация
+# Initialization
 from gQiwiAPI import Qiwi
-SECRET_KEY = 'Ваш секретный ключ для управления платежами'
+
+SECRET_KEY = 'Your secret key for managing payments'
 qiwi = Qiwi(SECRET_KEY)
-# Создание счета
-my_first_bill = qiwi.create_bill(10, '15m')
-# Получение ссылки
+# Creating a bill
+my_first_bill = qiwi.new(10, '15m')
+# Getting a payment link
 payUrl = my_first_bill.payUrl
-# Проверка статуса платежа
-bill_state = qiwi.bill_status(my_first_bill)
+# Checking the payment status
+bill_state = qiwi.status(my_first_bill)
+# Checking the payment status by id
+state_by_id = qiwi.check_id(my_first_bill.bill_id)
 ```
 
-> Получить `SECRET_KEY` можно на [офф. сайте](https://qiwi.com/p2p-admin/transfers/api).
+> You can get `SECRET_KEY` on [official website](https://qiwi.com/p2p-admin/transfers/api).
 
-##### Синтаксис
+##### Syntax
 
 ```python
-qiwi.create_bill(self, amount, comment=None, exp_dt='15m')
+class Qiwi:
+    def new(self, amount, comment=None, exp_dt='15m'): ...
 ```
 
-> `amount` - сумма платежа в рублях.
-> `comment` - комментарий.
-> `expDT` - время валидности ссылки.
+> `amount` - the amount of the payment in rubles.
+> `comment` - comment
+> `expDT` - the validity time of the link.
 
-Про `amount` скажу только, что Вы можете передать туда `str`, `int` и `float` и все будет прекрасно работать.
+About `amount` I will only say that you can pass `str`, `int` and `float` there and everything will work fine.
 
-Коментарий по умолчаниу установлен в значение `None`, и не используется.
-Добавить комментарий к платежу можно так:
+The default comment is set to `None`, and is not used.
+You can add a comment to the payment like this:
+
 ``` python
-qiwi.create_bill(self, 10, comment='Тест', expDT='30m')
+qiwi.create_bill(self, 10, comment='Test', expDT='30m')
 ```
 
-`expDT` задается в формате `nd:nh:nm:ns`, где
+`expDT` is set in the format `nd:nh:nm:ns`, where
 
-> `n` - число
-> `d` - дни
-> `h` - часы
-> `m` - минуты
-> `s` - секунды
+> `n` - int
+> `d` - days
+> `h` - hours
+> `m` - minutes
+> `s` - seconds
 
-Можно передавать в `n` как целое так и дробное число, порядок также не важен.
-Например:
+You can pass both integer and fractional numbers to `n`, the order is also not important.
+For example:
 
 ```python
+from gQiwiAPI import Qiwi
+
+qiwi = Qiwi('SECRET_KEY')
 amount = 10
-qiwi.create_bill(amount, exp_dt='0.3d:77m:0.5h')
+qiwi.new(amount, exp_dt='0.3d:77m:0.5h')
 ```
 
-#### Ссылки
+#### Links
 
-[QIWI: API P2P-счетов. Выставление счета](https://developer.qiwi.com/ru/p2p-payments/?shell#create)
-[QIWI: Аутентификационные данные](https://qiwi.com/p2p-admin/transfers/api)
+[QIWI: API of P2P accounts. Invoicing.](https://developer.qiwi.com/ru/p2p-payments/?shell#create)
+
+[QIWI: Authentication data.](https://qiwi.com/p2p-admin/transfers/api)
 
 #### TODO
 
-- Расширить API
-- - Добавить поддержку customer.
-- - Добавить поддержку customFields.
+- Expand the API
+-
+    - Add `customer` support
+-
+    - Add `customFields` support
