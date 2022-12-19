@@ -40,10 +40,8 @@ bill_state = qiwi.bill_status(my_first_bill)
 
 ##### Синтаксис
 
-
-
 ```python
-qiwi.create_bill(self, amount, comment=None, expDT='15m')
+qiwi.create_bill(self, amount, comment=None, exp_dt='15m')
 ```
 
 > `amount` - сумма платежа в рублях.
@@ -68,9 +66,10 @@ qiwi.create_bill(self, 10, comment='Тест', expDT='30m')
 
 Можно передавать в `n` как целое так и дробное число, порядок также не важен.
 Например:
+
 ```python
 amount = 10
-qiwi.create_bill(amount, expDT='0.3d:77m:0.5h')
+qiwi.create_bill(amount, exp_dt='0.3d:77m:0.5h')
 ```
 
 #### Ссылки

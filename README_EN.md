@@ -40,10 +40,8 @@ bill_state = qiwi.bill_status(my_first_bill)
 
 ##### Syntax
 
-
-
 ```python
-qiwi.create_bill(amount, expDT='15m')
+qiwi.create_bill(amount, exp_dt='15m')
 ```
 
 > `amount` - the amount of the payment in rubles.
@@ -68,9 +66,10 @@ qiwi.create_bill(self, 10, comment='Test', expDT='30m')
 
 You can pass both integer and fractional numbers to `n`, the order is also not important.
 For example:
+
 ```python
 amount = 10
-qiwi.create_bill(amount, expDT='0.3d:77m:0.5h')
+qiwi.create_bill(amount, exp_dt='0.3d:77m:0.5h')
 ```
 
 #### Links
