@@ -8,7 +8,7 @@ with open('requirements.txt', 'r') as req_file:
 
 setuptools.setup(
     name="gQiwiAPI",
-    version="1.4",
+    version="1.4.2",
     author="Gnifajio None",
     author_email="gnifajio@gmail.com",
     description="A simple API for creating a payment link",

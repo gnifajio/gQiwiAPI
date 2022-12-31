@@ -54,8 +54,8 @@ class Qiwi:
         rjson = requests.get(url=url, headers=self.headers).json()
         try:
             return rjson['status']['value']
-        except ValueError:
-            raise rjson
+        except KeyError:
+            raise ConnectionError(rjson)
 
     def _format_amount(self, amount: int | float | str):
         if isinstance(amount, float):
