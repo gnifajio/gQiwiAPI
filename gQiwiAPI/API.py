@@ -11,7 +11,7 @@ class Bill:
         try:
             rjson = resp.json()
         except JSONDecodeError as e:
-            raise JSONDecodeError(resp.content, resp.content, e.pos) from e
+            raise JSONDecodeError(resp.content, e.doc, e.pos) from e
 
         self.bill_id = rjson['billId']
         self.expDT = rjson['expirationDateTime']
