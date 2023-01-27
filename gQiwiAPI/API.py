@@ -3,11 +3,16 @@ from datetime import datetime, timedelta
 
 import pytz
 import requests
+from requests.exceptions import JSONDecodeError
 
 
 class Bill:
-    def __init__(self, resp):
-        rjson = resp.json()
+    def __init__(self, resp: requests.Response):
+        try:
+            rjson = resp.json()
+        except JSONDecodeError as e:
+            raise JSONDecodeError(resp.content) from e
+
         self.bill_id = rjson['billId']
         self.expDT = rjson['expirationDateTime']
         self.amount = rjson['amount']['value']
