@@ -1,4 +1,4 @@
-from .API import Qiwi, Bill
+from .api import *
 
-__version__ = '1.4.5'
-__author__ = '@UpdateGnifajio'
+__version__ = '1.4.6'
+__author__ = '@Gnifajio'
