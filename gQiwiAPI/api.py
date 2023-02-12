@@ -1,5 +1,6 @@
 import uuid
 from datetime import datetime, timedelta
+from typing import Dict, Union
 
 import httpx
 import pytz
@@ -7,8 +8,8 @@ from requests.exceptions import JSONDecodeError
 
 __all__ = ['Qiwi', 'Bill']
 
-URLTypes = "URL" | str
-ProxiesTypes = URLTypes | "Proxy" | dict[URLTypes, URLTypes | "Proxy" | None]
+URLTypes = Union["URL", str]
+ProxiesTypes = Union[URLTypes, "Proxy", Dict[URLTypes, Union[None, URLTypes, "Proxy"]]]
 
 
 class Bill:

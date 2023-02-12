@@ -3,5 +3,5 @@ __pycache__/
 *.bak
 build/
 dist/
-gQiwiAPI.egg-info/
+*.egg-info/
 .idea
